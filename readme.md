@@ -14,7 +14,7 @@ Download the data sets.
 
 ## Methodology
 
-I will write the methodology for this repository.
+Two plots are drawn on the same grid using a scatter plot with pandas.DataFrame.plot.scatter. 
 
 ## References
 
