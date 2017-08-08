@@ -24,7 +24,9 @@ Two plots are drawn on the same grid using a scatter plot with pandas.DataFrame.
 
 Johnson, Steven. *Ghost Map*. 2006. Riverhead Books: New York, NY.
 
-[Wikipedia 1854 Broad Street cholera outbreak](https://en.wikipedia.org/wiki/1854_Broad_Street_cholera_outbreak)## License
+[Wikipedia 1854 Broad Street cholera outbreak](https://en.wikipedia.org/wiki/1854_Broad_Street_cholera_outbreak)
+
+## License
 
 Copyright (c) 2017 GILLES PILON <gillespilon13@gmail.com>.
 
