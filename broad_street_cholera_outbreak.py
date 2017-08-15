@@ -41,10 +41,6 @@ pumps.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label="Pumps",
 # Remove the top and right spines.
 for spine in 'right', 'top':
     ax.spines[spine].set_color('none')
-# Place the ticks outside the axes.
-ax.tick_params(direction='out')
-ax.xaxis.set_ticks_position('bottom')
-ax.yaxis.set_ticks_position('left')
 # Label the graph and axes.
 ax.set_title(title + '\n' + subtitle)
 ax.set_ylabel(yaxislabel)
