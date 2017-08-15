@@ -39,8 +39,8 @@ pumps.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label="Pumps",
                    color='r').axis('auto')
 
 # Remove the top and right spines.
-ax.spines['right'].set_color('none')
-ax.spines['top'].set_color('none')
+for spine in 'right', 'top':
+    ax.spines[spine].set_color('none')
 # Place the ticks outside the axes.
 ax.tick_params(direction='out')
 ax.xaxis.set_ticks_position('bottom')
