@@ -30,6 +30,10 @@ subtitle = 'Soho, London, UK'
 yaxislabel = 'Distance from datum (m)'
 xaxislabel = 'Distance from datum (m)'
 
+# Use a colour-blind friendly colormap, "Paired".
+import matplotlib.cm as cm
+deaths_c, pumps_c, *_ = cm.Paired.colors
+
 # Create a graph of y v. x distances from a datum for cholera deaths and water pumps.
 
 # Create a single subplot.
