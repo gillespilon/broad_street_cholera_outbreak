@@ -38,9 +38,10 @@ deaths_c, pumps_c, *_ = cm.Paired.colors
 
 # Create a single subplot.
 ax = plt.subplot(111)
-deaths.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label="Deaths",                     color='b').axis('auto')
+deaths.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label="Deaths",
+                    color=deaths_c).axis('auto')
 pumps.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label="Pumps",
-                   color='r').axis('auto')
+                   color=pumps_c).axis('auto')
 
 # Remove the top and right spines.
 for spine in 'right', 'top':
