@@ -20,6 +20,7 @@
 
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.cm as cm
 
 deaths = pd.read_csv('snow_cholera_deaths.csv')
 pumps = pd.read_csv('snow_cholera_pumps.csv')
@@ -30,18 +31,21 @@ subtitle = 'Soho, London, UK'
 yaxislabel = 'Distance from datum (m)'
 xaxislabel = 'Distance from datum (m)'
 
-# Use a colour-blind friendly colormap, "Paired".
-import matplotlib.cm as cm
-deaths_c, pumps_c, *_ = cm.Paired.colors
+
+c = cm.Paired.colors
+# c[0] c[1] ... c[11]
+# See "paired" in "qualitative colormaps"
+# https://matplotlib.org/tutorials/colors/colormaps.html
+
 
 # Create a graph of y v. x distances from a datum for cholera deaths and water pumps.
 
 # Create a single subplot.
 ax = plt.subplot(111)
 deaths.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label="Deaths",
-                    color=deaths_c).axis('auto')
+                    color=c[0]).axis('auto')
 pumps.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label="Pumps",
-                   color=pumps_c).axis('auto')
+                   color=c[1]).axis('auto')
 
 # Remove the top and right spines.
 for spine in 'right', 'top':
