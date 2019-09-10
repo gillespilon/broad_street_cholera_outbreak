@@ -3,7 +3,8 @@
 '''
 Broad Street cholera outbreak
 
-time -f '%e' ./broad_street_cholera_outbreak.py > broad_street_cholera_outbreak.txt
+time -f '%e' ./broad_street_cholera_outbreak.py >
+    broad_street_cholera_outbreak.txt
 ./broad_street_cholera_outbreak.py > broad_street_cholera_outbreak.txt
 '''
 
