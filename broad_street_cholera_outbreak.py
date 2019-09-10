@@ -36,6 +36,7 @@ Johnson, Steven. *Ghost Map*. 2006. Riverhead Books: New York, NY.
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
+import matplotlib.axes as axes
 
 deaths = pd.read_csv('snow_cholera_deaths.csv')
 pumps = pd.read_csv('snow_cholera_pumps.csv')
@@ -52,6 +53,11 @@ c = cm.Paired.colors
 # https://matplotlib.org/tutorials/colors/colormaps.html
 
 
+def despine(ax: axes.Axes) -> None:
+    for spine in 'right', 'top':
+        ax.spines[spine].set_color('none')
+
+
 fig, ax = plt.subplots(figsize=(12, 12))
 deaths.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label="Deaths",
                     color=c[0]).axis('auto')
@@ -59,8 +65,7 @@ pumps.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label="Pumps",
                    color=c[1]).axis('auto')
 
 
-for spine in 'right', 'top':
-    ax.spines[spine].set_color('none')
+despine(ax)
 ax.set_title(title + '\n' + subtitle)
 ax.set_ylabel(yaxislabel)
 ax.set_xlabel(xaxislabel)
