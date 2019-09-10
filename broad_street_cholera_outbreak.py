@@ -58,17 +58,21 @@ def despine(ax: axes.Axes) -> None:
         ax.spines[spine].set_color('none')
 
 
-fig, ax = plt.subplots(figsize=(12, 12))
-deaths.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label="Deaths",
-                    color=c[0]).axis('auto')
-pumps.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label="Pumps",
-                   color=c[1]).axis('auto')
+def plot_broad_street(deaths, pumps):
+    fig, ax = plt.subplots(figsize=(12, 12))
+    deaths.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label="Deaths",
+                        color=c[0]).axis('auto')
+    pumps.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label="Pumps",
+                       color=c[1]).axis('auto')
 
 
-despine(ax)
-ax.set_title(title + '\n' + subtitle)
-ax.set_ylabel(yaxislabel)
-ax.set_xlabel(xaxislabel)
-ax.legend(frameon=False)
-ax.figure.savefig('broad_street_cholera_outbreak.svg', format='svg')
-ax.figure.savefig('broad_street_cholera_outbreak.pdf', format='pdf')
+    despine(ax)
+    ax.set_title(title + '\n' + subtitle)
+    ax.set_ylabel(yaxislabel)
+    ax.set_xlabel(xaxislabel)
+    ax.legend(frameon=False)
+    ax.figure.savefig('broad_street_cholera_outbreak.svg', format='svg')
+    ax.figure.savefig('broad_street_cholera_outbreak.pdf', format='pdf')
+
+
+plot_broad_street(deaths, pumps)
