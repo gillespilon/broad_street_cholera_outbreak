@@ -66,5 +66,5 @@ ax.set_title(title + '\n' + subtitle)
 ax.set_ylabel(yaxislabel)
 ax.set_xlabel(xaxislabel)
 ax.legend(frameon=False)
-ax.figure.savefig('broad_street_cholera_outbreak.svg', format='svg');
-ax.figure.savefig('broad_street_cholera_outbreak.pdf', format='pdf');
+ax.figure.savefig('broad_street_cholera_outbreak.svg', format='svg')
+ax.figure.savefig('broad_street_cholera_outbreak.pdf', format='pdf')
