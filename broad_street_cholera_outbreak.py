@@ -1,9 +1,12 @@
-#! /usr/bin/env python3
+#!/usr/bin/env python3
 
-# # Broad Street Cholera Outbreak
+'''
+Broad Street cholera outbreak
 
-# ## In brevi
-#
+time -f '%e' ./broad_street_cholera_outbreak.py > broad_street_cholera_outbreak.txt
+./broad_street_cholera_outbreak.py > broad_street_cholera_outbreak.txt
+'''
+
 # There was a severe outbreak of cholera in 1854 in the Soho district of London, England, which killed 616 people over one month. Dr. John Snow and Reverence Henry Whitehead linked the outbreak to contaminated water, identified the index case, and stopped the outbreak by having the Broad Street water pump disabled.
 
 # ## Data
