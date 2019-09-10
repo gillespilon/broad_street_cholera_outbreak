@@ -23,8 +23,6 @@ open?id=0BzrdQfHR2I5DSDd2emxObk9HUDA). The x-y values are the distances in m
 from the lower left datum of the map. Each pair represents one pump. There are
 13 values, representing 13 pumps.
 
-References
-
 [John Snow site at UCLA](http://www.ph.ucla.edu/epi/snow.html).
 [John Snow's cholera data](http://www.math.uah.edu/stat/data/Snow.html)
 Johnson, Steven. *Ghost Map*. 2006. Riverhead Books: New York, NY.
