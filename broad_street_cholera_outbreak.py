@@ -37,10 +37,8 @@ import matplotlib.cm as cm
 import matplotlib.axes as axes
 
 
-c = cm.Paired.colors
-# c[0] c[1] ... c[11]
-# See "paired" in "qualitative colormaps"
 # https://matplotlib.org/tutorials/colors/colormaps.html
+c = cm.Paired.colors
 
 
 def despine(ax: axes.Axes) -> None:
@@ -54,8 +52,6 @@ def plot_broad_street(deaths, pumps):
                         color=c[0]).axis('auto')
     pumps.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label="Pumps",
                        color=c[1]).axis('auto')
-
-
     despine(ax)
     ax.set_title(title + '\n' + subtitle)
     ax.set_ylabel(yaxislabel)
