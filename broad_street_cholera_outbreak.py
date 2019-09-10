@@ -23,13 +23,16 @@ Each pair represents one death. There are 578 values, slightly less than the
 open?id=0BzrdQfHR2I5DSDd2emxObk9HUDA). The x-y values are the distances in m
 from the lower left datum of the map. Each pair represents one pump. There are
 13 values, representing 13 pumps.
+
+References
+
+[John Snow site at UCLA](http://www.ph.ucla.edu/epi/snow.html).
+[John Snow's cholera data](http://www.math.uah.edu/stat/data/Snow.html)
+Johnson, Steven. *Ghost Map*. 2006. Riverhead Books: New York, NY.
+[Wikipedia 1854 Broad Street cholera outbreak]
+    (https://en.wikipedia.org/wiki/1854_Broad_Street_cholera_outbreak)
 '''
 
-
-
-# ## Methodology
-#
-# Two plots are drawn on the same grid using a scatter plot with pandas.DataFrame.plot.scatter.
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -38,7 +41,6 @@ import matplotlib.cm as cm
 deaths = pd.read_csv('snow_cholera_deaths.csv')
 pumps = pd.read_csv('snow_cholera_pumps.csv')
 
-# Define the graph title and subtitle, and the x and y axis labels.
 title = 'Broad Street Cholera Outbreak of 1854'
 subtitle = 'Soho, London, UK'
 yaxislabel = 'Distance from datum (m)'
@@ -51,35 +53,18 @@ c = cm.Paired.colors
 # https://matplotlib.org/tutorials/colors/colormaps.html
 
 
-# Create a graph of y v. x distances from a datum for cholera deaths and water pumps.
-
-# Create a single subplot.
 ax = plt.subplot(111)
 deaths.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label="Deaths",
                     color=c[0]).axis('auto')
 pumps.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label="Pumps",
                    color=c[1]).axis('auto')
 
-# Remove the top and right spines.
+
 for spine in 'right', 'top':
     ax.spines[spine].set_color('none')
-# Label the graph and axes.
 ax.set_title(title + '\n' + subtitle)
 ax.set_ylabel(yaxislabel)
 ax.set_xlabel(xaxislabel)
-# Remove the box around the legend.
 ax.legend(frameon=False)
-# Save the graph as svg and pdf.
 ax.figure.savefig('broad_street_cholera_outbreak.svg', format='svg');
 ax.figure.savefig('broad_street_cholera_outbreak.pdf', format='pdf');
-
-
-# # References
-#
-# [John Snow site at UCLA](http://www.ph.ucla.edu/epi/snow.html).
-#
-# [John Snow's cholera data](http://www.math.uah.edu/stat/data/Snow.html)
-#
-# Johnson, Steven. *Ghost Map*. 2006. Riverhead Books: New York, NY.
-#
-# [Wikipedia 1854 Broad Street cholera outbreak](https://en.wikipedia.org/wiki/1854_Broad_Street_cholera_outbreak)
