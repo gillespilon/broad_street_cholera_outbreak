@@ -53,7 +53,7 @@ c = cm.Paired.colors
 # https://matplotlib.org/tutorials/colors/colormaps.html
 
 
-ax = plt.subplot(111)
+fig, ax = plt.subplots(figsize=(12, 12))
 deaths.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label="Deaths",
                     color=c[0]).axis('auto')
 pumps.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label="Pumps",
