@@ -36,14 +36,6 @@ import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 import matplotlib.axes as axes
 
-deaths = pd.read_csv('snow_cholera_deaths.csv')
-pumps = pd.read_csv('snow_cholera_pumps.csv')
-
-title = 'Broad Street Cholera Outbreak of 1854'
-subtitle = 'Soho, London, UK'
-yaxislabel = 'Distance from datum (m)'
-xaxislabel = 'Distance from datum (m)'
-
 
 c = cm.Paired.colors
 # c[0] c[1] ... c[11]
@@ -73,4 +65,11 @@ def plot_broad_street(deaths, pumps):
     ax.figure.savefig('broad_street_cholera_outbreak.pdf', format='pdf')
 
 
-plot_broad_street(deaths, pumps)
+if __name__ == '__main__':
+    deaths = pd.read_csv('snow_cholera_deaths.csv')
+    pumps = pd.read_csv('snow_cholera_pumps.csv')
+    title = 'Broad Street Cholera Outbreak of 1854'
+    subtitle = 'Soho, London, UK'
+    yaxislabel = 'Distance from datum (m)'
+    xaxislabel = 'Distance from datum (m)'
+    plot_broad_street(deaths, pumps)
