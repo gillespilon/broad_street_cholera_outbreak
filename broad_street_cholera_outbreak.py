@@ -46,7 +46,7 @@ def despine(ax: axes.Axes) -> None:
         ax.spines[spine].set_color('none')
 
 
-def plot_broad_street(deaths, pumps):
+def plot_broad_street(df1, df2):
     fig, ax = plt.subplots(figsize=(12, 12))
     deaths.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label="Deaths",
                         color=c[0]).axis('auto')
