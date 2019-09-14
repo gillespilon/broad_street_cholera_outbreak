@@ -46,12 +46,12 @@ def despine(ax: axes.Axes) -> None:
         ax.spines[spine].set_color('none')
 
 
-def plot_broad_street(df1, df2):
+def plot_broad_street(df1, legend1, df2, legend2):
     fig, ax = plt.subplots(figsize=(12, 12))
-    df1.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label="Deaths",
-                        color=c[0]).axis('auto')
-    df2.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label="Pumps",
-                       color=c[1]).axis('auto')
+    df1.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label=legend1,
+                     color=c[0]).axis('auto')
+    df2.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label=legend2,
+                     color=c[1]).axis('auto')
     despine(ax)
     ax.set_title(title + '\n' + subtitle)
     ax.set_ylabel(yaxislabel)
@@ -63,8 +63,10 @@ def plot_broad_street(df1, df2):
 if __name__ == '__main__':
     deaths = pd.read_csv('snow_cholera_deaths.csv')
     pumps = pd.read_csv('snow_cholera_pumps.csv')
+    legend1 = 'Deaths'
+    legend2 = 'Pumps'
     title = 'Broad Street Cholera Outbreak of 1854'
     subtitle = 'Soho, London, UK'
     yaxislabel = 'Distance from datum (m)'
     xaxislabel = 'Distance from datum (m)'
-    plot_broad_street(deaths, pumps)
+    plot_broad_street(deaths, legend1, pumps, legend2)
