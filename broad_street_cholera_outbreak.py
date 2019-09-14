@@ -47,7 +47,7 @@ def despine(ax: axes.Axes) -> None:
 
 
 def plot_broad_street(df1, legend1, df2, legend2, title, subtitle,
-                      yaxislabel, xaxislabel):
+                      yaxislabel, xaxislabel, file_graph):
     fig, ax = plt.subplots(figsize=(12, 12))
     df1.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label=legend1,
                      color=c[0]).axis('auto')
@@ -58,7 +58,7 @@ def plot_broad_street(df1, legend1, df2, legend2, title, subtitle,
     ax.set_ylabel(yaxislabel)
     ax.set_xlabel(xaxislabel)
     ax.legend(frameon=False)
-    ax.figure.savefig('broad_street_cholera_outbreak.svg', format='svg')
+    ax.figure.savefig(file_graph, format='svg')
 
 
 if __name__ == '__main__':
@@ -70,5 +70,6 @@ if __name__ == '__main__':
     subtitle = 'Soho, London, UK'
     yaxislabel = 'Distance from datum (m)'
     xaxislabel = 'Distance from datum (m)'
+    file_graph = 'broad_street_cholera_outbreak.svg'
     plot_broad_street(deaths, legend1, pumps, legend2, title, subtitle,
-                      yaxislabel, xaxislabel)
+                      yaxislabel, xaxislabel, file_graph)
