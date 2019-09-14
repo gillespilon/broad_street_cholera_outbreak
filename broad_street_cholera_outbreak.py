@@ -46,7 +46,7 @@ def despine(ax: axes.Axes) -> None:
         ax.spines[spine].set_color('none')
 
 
-def plot_broad_street(df1, legend1, df2, legend2):
+def plot_broad_street(df1, legend1, df2, legend2, title):
     fig, ax = plt.subplots(figsize=(12, 12))
     df1.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label=legend1,
                      color=c[0]).axis('auto')
@@ -69,4 +69,4 @@ if __name__ == '__main__':
     subtitle = 'Soho, London, UK'
     yaxislabel = 'Distance from datum (m)'
     xaxislabel = 'Distance from datum (m)'
-    plot_broad_street(deaths, legend1, pumps, legend2)
+    plot_broad_street(deaths, legend1, pumps, legend2, title)
