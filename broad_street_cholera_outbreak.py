@@ -42,6 +42,9 @@ c = cm.Paired.colors
 
 
 def despine(ax: axes.Axes) -> None:
+    '''
+    Remove the top and right spines of a graph.
+    '''
     for spine in 'right', 'top':
         ax.spines[spine].set_color('none')
 
