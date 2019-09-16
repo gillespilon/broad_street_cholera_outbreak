@@ -7,7 +7,7 @@ time -f '%e' ./broad_street_cholera_outbreak.py
 ./broad_street_cholera_outbreak.py
 
 There was a severe outbreak of cholera in 1854 in the Soho district of London,
-England, which killed 616 people over one month. Dr. John Snow and Reverence
+England, which killed 616 people over one month. Dr. John Snow and Reverend
 Henry Whitehead linked the outbreak to contaminated water, identified the index
 case, and stopped the outbreak by having the Broad Street water pump disabled.
 
