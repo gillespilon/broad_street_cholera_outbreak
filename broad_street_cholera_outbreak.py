@@ -3,8 +3,8 @@
 '''
 Broad Street cholera outbreak
 
-time -f '%e' ./broad_street_cholera_outbreak.py
-./broad_street_cholera_outbreak.py
+    time -f '%e' ./broad_street_cholera_outbreak.py
+    ./broad_street_cholera_outbreak.py
 
 There was a severe outbreak of cholera in 1854 in the Soho district of London,
 England, which killed 616 people over one month. Dr. John Snow and Reverend
