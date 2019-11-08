@@ -46,7 +46,7 @@ def despine(ax: axes.Axes) -> None:
     Remove the top and right spines of a graph.
     '''
     for spine in 'right', 'top':
-        ax.spines[spine].set_color('none')
+        ax.spines[spine].set_visible(False)
 
 
 def plot_broad_street(df1: pd.DataFrame,
