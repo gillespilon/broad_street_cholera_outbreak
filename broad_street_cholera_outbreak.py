@@ -45,13 +45,14 @@ def main():
     pumps = pd.read_csv('snow_cholera_pumps.csv')
     legend1 = 'Deaths'
     legend2 = 'Pumps'
-    title = 'Broad Street Cholera Outbreak of 1854'
-    subtitle = 'Soho, London, UK'
-    yaxislabel = 'Distance from datum (m)'
-    xaxislabel = 'Distance from datum (m)'
+    axis_title = 'Broad Street Cholera Outbreak of 1854'
+    axis_subtitle = 'Soho, London, UK'
+    y_axis_label = 'Distance from datum (m)'
+    x_axis_label = 'Distance from datum (m)'
     file_graph = 'broad_street_cholera_outbreak.svg'
-    plot_broad_street(deaths, legend1, pumps, legend2, title, subtitle,
-                      yaxislabel, xaxislabel, file_graph)
+    plot_broad_street(deaths, legend1, pumps, legend2,
+                      axis_title, axis_subtitle,
+                      y_axis_label, x_axis_label, file_graph)
 
 def despine(ax: axes.Axes) -> None:
     '''
@@ -67,10 +68,10 @@ def plot_broad_street(df1: pd.DataFrame,
                       legend1: str,
                       df2: pd.DataFrame,
                       legend2: str,
-                      title: str,
-                      subtitle: str,
-                      yaxislabel: str,
-                      xaxislabel: str,
+                      axis_title: str,
+                      axis_subtitle: str,
+                      y_axis_label: str,
+                      x_axis_label: str,
                       file_graph: str) -> None:
     # fig, ax = plt.subplots(figsize=(12, 12))
     # df1.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label=legend1,
@@ -85,9 +86,9 @@ def plot_broad_street(df1: pd.DataFrame,
     ax.plot(df2['x'], df2['y'], label=legend2, marker='.',
             linestyle='None', markersize=5, color=c[1])
     despine(ax)
-    ax.set_title(title + '\n' + subtitle)
-    ax.set_ylabel(yaxislabel)
-    ax.set_xlabel(xaxislabel)
+    ax.set_title(axis_title + '\n' + axis_subtitle)
+    ax.set_ylabel(y_axis_label)
+    ax.set_xlabel(x_axis_label)
     ax.legend(frameon=False)
     ax.figure.savefig(file_graph, format='svg')
 
