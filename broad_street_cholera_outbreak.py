@@ -86,9 +86,9 @@ def plot_broad_street(df1: pd.DataFrame,
     ax.plot(df2['x'], df2['y'], label=legend2, marker='.',
             linestyle='None', markersize=5, color=c[1])
     despine(ax)
-    ax.set_title(axis_title + '\n' + axis_subtitle)
-    ax.set_ylabel(y_axis_label)
-    ax.set_xlabel(x_axis_label)
+    ax.set_title(axis_title + '\n' + axis_subtitle, fontweight='bold')
+    ax.set_ylabel(y_axis_label, fontweight='bold')
+    ax.set_xlabel(x_axis_label, fontweight='bold')
     ax.legend(frameon=False)
     ax.figure.savefig(file_graph, format='svg')
 
