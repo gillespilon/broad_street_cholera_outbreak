@@ -73,11 +73,6 @@ def plot_broad_street(df1: pd.DataFrame,
                       y_axis_label: str,
                       x_axis_label: str,
                       file_graph: str) -> None:
-    # fig, ax = plt.subplots(figsize=(12, 12))
-    # df1.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label=legend1,
-    #                  color=c[0]).axis('auto')
-    # df2.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label=legend2,
-    #                  color=c[1]).axis('auto')
     figure_width_height = (8, 6)
     fig = plt.figure(figsize=figure_width_height)
     ax = fig.add_subplot(111)
