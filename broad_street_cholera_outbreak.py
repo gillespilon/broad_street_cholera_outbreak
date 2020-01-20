@@ -37,7 +37,6 @@ import matplotlib.cm as cm
 import matplotlib.axes as axes
 
 
-# https://matplotlib.org/tutorials/colors/colormaps.html
 c = cm.Paired.colors
 
 
