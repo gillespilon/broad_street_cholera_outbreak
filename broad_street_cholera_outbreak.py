@@ -40,6 +40,19 @@ import matplotlib.axes as axes
 c = cm.Paired.colors
 
 
+def main():
+    deaths = pd.read_csv('snow_cholera_deaths.csv')
+    pumps = pd.read_csv('snow_cholera_pumps.csv')
+    legend1 = 'Deaths'
+    legend2 = 'Pumps'
+    title = 'Broad Street Cholera Outbreak of 1854'
+    subtitle = 'Soho, London, UK'
+    yaxislabel = 'Distance from datum (m)'
+    xaxislabel = 'Distance from datum (m)'
+    file_graph = 'broad_street_cholera_outbreak.svg'
+    plot_broad_street(deaths, legend1, pumps, legend2, title, subtitle,
+                      yaxislabel, xaxislabel, file_graph)
+
 def despine(ax: axes.Axes) -> None:
     '''
     Remove the top and right spines of a graph.
@@ -73,14 +86,4 @@ def plot_broad_street(df1: pd.DataFrame,
 
 
 if __name__ == '__main__':
-    deaths = pd.read_csv('snow_cholera_deaths.csv')
-    pumps = pd.read_csv('snow_cholera_pumps.csv')
-    legend1 = 'Deaths'
-    legend2 = 'Pumps'
-    title = 'Broad Street Cholera Outbreak of 1854'
-    subtitle = 'Soho, London, UK'
-    yaxislabel = 'Distance from datum (m)'
-    xaxislabel = 'Distance from datum (m)'
-    file_graph = 'broad_street_cholera_outbreak.svg'
-    plot_broad_street(deaths, legend1, pumps, legend2, title, subtitle,
-                      yaxislabel, xaxislabel, file_graph)
+    main()
