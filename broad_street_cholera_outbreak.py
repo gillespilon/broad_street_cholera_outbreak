@@ -72,11 +72,18 @@ def plot_broad_street(df1: pd.DataFrame,
                       yaxislabel: str,
                       xaxislabel: str,
                       file_graph: str) -> None:
-    fig, ax = plt.subplots(figsize=(12, 12))
-    df1.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label=legend1,
-                     color=c[0]).axis('auto')
-    df2.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label=legend2,
-                     color=c[1]).axis('auto')
+    # fig, ax = plt.subplots(figsize=(12, 12))
+    # df1.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label=legend1,
+    #                  color=c[0]).axis('auto')
+    # df2.plot.scatter('x', 'y', legend=True, ax=ax, s=3, label=legend2,
+    #                  color=c[1]).axis('auto')
+    figure_width_height = (8, 6)
+    fig = plt.figure(figsize=figure_width_height)
+    ax = fig.add_subplot(111)
+    ax.plot(df1['x'], df1['y'], label=legend1, marker='.',
+            linestyle='None',markersize=3, color=c[0])
+    ax.plot(df2['x'], df2['y'], label=legend2, marker='.',
+            linestyle='None', markersize=5, color=c[1])
     despine(ax)
     ax.set_title(title + '\n' + subtitle)
     ax.set_ylabel(yaxislabel)
