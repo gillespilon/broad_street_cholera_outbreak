@@ -43,12 +43,11 @@ c = cm.Paired.colors
 def main():
     deaths = pd.read_csv('snow_cholera_deaths.csv')
     pumps = pd.read_csv('snow_cholera_pumps.csv')
-    legend1 = 'Deaths'
-    legend2 = 'Pumps'
-    axis_title = 'Broad Street Cholera Outbreak of 1854'
-    axis_subtitle = 'Soho, London, UK'
-    y_axis_label = 'Distance from datum (m)'
-    x_axis_label = 'Distance from datum (m)'
+    legend1, legend2 = ('Deaths', 'Pumps')
+    axis_title, axis_subtitle = ('Broad Street Cholera Outbreak of 1854',
+                                 'Soho, London, UK')
+    x_axis_label, y_axis_label = ('Distance from datum (m)',
+                                  'Distance from datum (m)')
     file_graph = 'broad_street_cholera_outbreak.svg'
     plot_broad_street(deaths, legend1, pumps, legend2,
                       axis_title, axis_subtitle,
