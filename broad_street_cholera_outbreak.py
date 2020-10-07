@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-
-'''
+"""
 Broad Street cholera outbreak
 
     time -f '%e' ./broad_street_cholera_outbreak.py
@@ -28,16 +27,14 @@ from the lower left datum of the map. Each pair represents one pump. There are
 Johnson, Steven. *Ghost Map*. 2006. Riverhead Books: New York, NY.
 [Wikipedia 1854 Broad Street cholera outbreak]
     (https://en.wikipedia.org/wiki/1854_Broad_Street_cholera_outbreak)
-'''
+"""
 
-
-import pandas as pd
 import matplotlib.pyplot as plt
-import matplotlib.cm as cm
 import matplotlib.axes as axes
+import pandas as pd
 
-
-c = cm.Paired.colors
+colour1 = '#0077bb'
+colour2 = '#33bbee'
 
 
 def main():
@@ -82,9 +79,9 @@ def plot_broad_street(df1: pd.DataFrame,
     fig = plt.figure(figsize=figure_width_height)
     ax = fig.add_subplot(111)
     ax.plot(df1['x'], df1['y'], label=legend1, marker='.',
-            linestyle='None',markersize=3, color=c[0])
+            linestyle='None',markersize=3, color=colour1)
     ax.plot(df2['x'], df2['y'], label=legend2, marker='.',
-            linestyle='None', markersize=5, color=c[1])
+            linestyle='None', markersize=5, color=colour2)
     despine(ax)
     ax.set_title(axis_title + '\n' + axis_subtitle, fontweight='bold')
     ax.set_ylabel(y_axis_label, fontweight='bold')
