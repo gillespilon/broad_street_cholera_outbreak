@@ -87,7 +87,7 @@ def plot_broad_street(df1: pd.DataFrame,
     ax.set_ylabel(y_axis_label, fontweight='bold')
     ax.set_xlabel(x_axis_label, fontweight='bold')
     ax.legend(frameon=False)
-    ax.figure.savefig(file_graph, format='svg')
+    fig.savefig(file_graph, format='svg')
 
 
 if __name__ == '__main__':
