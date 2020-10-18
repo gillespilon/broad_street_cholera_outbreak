@@ -37,32 +37,34 @@ colour2 = '#33bbee'
 
 
 def main():
-    deaths = pd.read_csv('snow_cholera_deaths.csv')
-    pumps = pd.read_csv('snow_cholera_pumps.csv')
-    figsize = (8, 6)
-    legend1, legend2 = (
+    deaths = pd.read_csv(
+        'snow_cholera_deaths.csv',
+    )
+    pumps = pd.read_csv(
+        'snow_cholera_pumps.csv'
+    )
+    file_graph, figsize, legend1, legend2 = (
+        'broad_street_cholera_outbreak.svg',
+        (8, 6),
         'Deaths',
         'Pumps'
     )
-    axis_title, axis_subtitle = (
+    axis_title, axis_subtitle, x_axis_label, y_axis_label = (
         'Broad Street Cholera Outbreak of 1854',
-        'Soho, London, UK'
-    )
-    x_axis_label, y_axis_label = (
+        'Soho, London, UK',
         'Distance from datum (m)',
         'Distance from datum (m)'
     )
-    file_graph = 'broad_street_cholera_outbreak.svg'
     fig, ax = ds.plot_scatter_scatter_x1_x2_y1_y2(
+        figsize=figsize,
+        markersize1=3,
+        markersize2=3,
         X1=deaths['x'],
         X2=pumps['x'],
         y1=deaths['y'],
         y2=pumps['y'],
         labellegendy1=legend1,
-        labellegendy2=legend2,
-        figsize=figsize,
-        markersize1=3,
-        markersize2=3
+        labellegendy2=legend2
     )
     ax.set_title(axis_title + '\n' + axis_subtitle, fontweight='bold')
     ax.set_ylabel(y_axis_label, fontweight='bold')
