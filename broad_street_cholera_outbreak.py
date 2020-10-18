@@ -37,6 +37,14 @@ colour2 = '#33bbee'
 
 
 def main():
+    output_url = 'broad_street_cholera.html'
+    header_title = 'broad_street_cholera'
+    header_id = 'broad-street-cholera'
+    original_stdout = ds.html_begin(
+        output_url=output_url,
+        header_title=header_title,
+        header_id=header_id
+    )
     deaths = ds.read_file(
         'snow_cholera_deaths.csv',
     )
@@ -72,6 +80,11 @@ def main():
     ax.legend(frameon=False)
     ds.despine(ax)
     fig.savefig(file_graph, format='svg')
+    ds.html_figure(file_name=file_graph)
+    ds.html_end(
+        original_stdout=original_stdout,
+        output_url=output_url
+    )
 
 
 if __name__ == '__main__':
