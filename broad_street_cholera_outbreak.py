@@ -29,8 +29,7 @@ Johnson, Steven. *Ghost Map*. 2006. Riverhead Books: New York, NY.
     (https://en.wikipedia.org/wiki/1854_Broad_Street_cholera_outbreak)
 """
 
-import matplotlib.pyplot as plt
-import matplotlib.axes as axes
+import datasense as ds
 import pandas as pd
 
 colour1 = '#0077bb'
@@ -40,53 +39,36 @@ colour2 = '#33bbee'
 def main():
     deaths = pd.read_csv('snow_cholera_deaths.csv')
     pumps = pd.read_csv('snow_cholera_pumps.csv')
-    legend1, legend2 = ('Deaths', 'Pumps')
-    axis_title, axis_subtitle = ('Broad Street Cholera Outbreak of 1854',
-                                 'Soho, London, UK')
-    x_axis_label, y_axis_label = ('Distance from datum (m)',
-                                  'Distance from datum (m)')
+    figsize = (8, 6)
+    legend1, legend2 = (
+        'Deaths',
+        'Pumps'
+    )
+    axis_title, axis_subtitle = (
+        'Broad Street Cholera Outbreak of 1854',
+        'Soho, London, UK'
+    )
+    x_axis_label, y_axis_label = (
+        'Distance from datum (m)',
+        'Distance from datum (m)'
+    )
     file_graph = 'broad_street_cholera_outbreak.svg'
-    plot_broad_street(deaths, legend1, pumps, legend2,
-                      axis_title, axis_subtitle,
-                      y_axis_label, x_axis_label, file_graph)
-
-def despine(ax: axes.Axes) -> None:
-    """
-    Remove the top and right spines of a graph.
-
-    Parameters
-    ----------
-    ax : axes.Axes
-
-    Example
-    -------
-    >>> despine(ax)
-    """
-    for spine in 'right', 'top':
-        ax.spines[spine].set_visible(False)
-
-
-def plot_broad_street(df1: pd.DataFrame,
-                      legend1: str,
-                      df2: pd.DataFrame,
-                      legend2: str,
-                      axis_title: str,
-                      axis_subtitle: str,
-                      y_axis_label: str,
-                      x_axis_label: str,
-                      file_graph: str) -> None:
-    figure_width_height = (8, 6)
-    fig = plt.figure(figsize=figure_width_height)
-    ax = fig.add_subplot(111)
-    ax.plot(df1['x'], df1['y'], label=legend1, marker='.',
-            linestyle='None',markersize=3, color=colour1)
-    ax.plot(df2['x'], df2['y'], label=legend2, marker='.',
-            linestyle='None', markersize=5, color=colour2)
-    despine(ax)
+    fig, ax = ds.plot_scatter_scatter_x1_x2_y1_y2(
+        X1=deaths['x'],
+        X2=pumps['x'],
+        y1=deaths['y'],
+        y2=pumps['y'],
+        labellegendy1=legend1,
+        labellegendy2=legend2,
+        figsize=figsize,
+        markersize1=3,
+        markersize2=3
+    )
     ax.set_title(axis_title + '\n' + axis_subtitle, fontweight='bold')
     ax.set_ylabel(y_axis_label, fontweight='bold')
     ax.set_xlabel(x_axis_label, fontweight='bold')
     ax.legend(frameon=False)
+    ds.despine(ax)
     fig.savefig(file_graph, format='svg')
 
 
