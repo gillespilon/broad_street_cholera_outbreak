@@ -37,10 +37,10 @@ colour2 = '#33bbee'
 
 
 def main():
-    deaths = pd.read_csv(
+    deaths = ds.read_file(
         'snow_cholera_deaths.csv',
     )
-    pumps = pd.read_csv(
+    pumps = ds.read_file(
         'snow_cholera_pumps.csv'
     )
     file_graph, figsize, legend1, legend2 = (
