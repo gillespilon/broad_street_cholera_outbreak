@@ -44,12 +44,8 @@ def main():
         header_title=header_title,
         header_id=header_id
     )
-    deaths = ds.read_file(
-        'snow_cholera_deaths.csv',
-    )
-    pumps = ds.read_file(
-        'snow_cholera_pumps.csv'
-    )
+    deaths = ds.read_file(file_name='snow_cholera_deaths.csv')
+    pumps = ds.read_file(file_name='snow_cholera_pumps.csv')
     file_graph, figsize, legend1, legend2 = (
         'broad_street_cholera_outbreak.svg',
         (8, 6),
