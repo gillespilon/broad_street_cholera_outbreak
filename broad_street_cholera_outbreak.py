@@ -73,7 +73,10 @@ def main():
     )
     ax.set_title(axis_title + '\n' + axis_subtitle, fontweight='bold')
     ax.set_ylabel(y_axis_label, fontweight='bold')
-    ax.set_xlabel(x_axis_label, fontweight='bold')
+    ax.set_xlabel(
+        xlabel=x_axis_label,
+        fontweight='bold'
+    )
     ax.legend(frameon=False)
     ds.despine(ax)
     fig.savefig(
