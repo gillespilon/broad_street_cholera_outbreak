@@ -71,7 +71,10 @@ def main():
         colour1=colour1,
         colour2=colour2
     )
-    ax.set_title(axis_title + '\n' + axis_subtitle, fontweight='bold')
+    ax.set_title(
+        label=axis_title + '\n' + axis_subtitle,
+        fontweight='bold'
+    )
     ax.set_ylabel(
         ylabel=y_axis_label,
         fontweight='bold'
