@@ -46,30 +46,26 @@ def main():
     )
     deaths = ds.read_file(file_name='snow_cholera_deaths.csv')
     pumps = ds.read_file(file_name='snow_cholera_pumps.csv')
-    file_graph, figsize, legend1, legend2 = (
-        'broad_street_cholera_outbreak.svg',
-        (8, 6),
-        'Deaths',
-        'Pumps'
-    )
-    axis_title, axis_subtitle, x_axis_label, y_axis_label = (
-        'Broad Street Cholera Outbreak of 1854',
-        'Soho, London, UK',
-        'Distance from datum (m)',
-        'Distance from datum (m)'
-    )
+    file_graph = 'broad_street_cholera_outbreak.svg'
+    figsize = (8, 6)
+    legend1 = 'Deaths'
+    legend2 = 'Pumps'
+    axis_title = 'Broad Street Cholera Outbreak of 1854'
+    axis_subtitle = 'Soho, London, UK'
+    x_axis_label = 'X distance from lower left datum of map (m)'
+    y_axis_label = 'Y distance from lower left datum of map (m)'
     fig, ax = ds.plot_scatter_scatter_x1_x2_y1_y2(
-        figsize=figsize,
-        markersize1=3,
-        markersize2=3,
         X1=deaths['x'],
         X2=pumps['x'],
         y1=deaths['y'],
         y2=pumps['y'],
-        labellegendy1=legend1,
+        figsize=figsize,
+        markersize1=3,
         labellegendy2=legend2,
         colour1=colour1,
-        colour2=colour2
+        colour2=colour2,
+        markersize2=3,
+        labellegendy1=legend1
     )
     ax.set_title(
         label=axis_title + '\n' + axis_subtitle,
