@@ -12,10 +12,6 @@ snow_cholera_pumps. The x-y values are the distances in m from the lower left da
 
 The [datasense](https://github.com/gillespilon/datasense) package is required.
 
-## Methodology
-
-Two plots are drawn on the same grid using a scatter plot with pandas.DataFrame.plot.scatter.
-
 ## References
 
 [John Snow site at UCLA](http://www.ph.ucla.edu/epi/snow.html).
