@@ -30,12 +30,21 @@ Johnson, Steven. *Ghost Map*. 2006. Riverhead Books: New York, NY.
 """
 
 import datasense as ds
+import pandas as pd
 
 colour1 = '#0077bb'
 colour2 = '#ee7733'
 
 
 def main():
+    data_pumps = {
+        'x': [
+            8.7, 11, 13.4, 14.9, 8.7, 8.9, 12.6, 10.7, 13.5, 16.4, 18.9, 16, 9
+        ],
+        'y': [
+            17.9, 18.5, 17.4, 17.8, 14.9, 12.8, 11.7, 7.4, 8, 9.3, 9.7, 5, 5.1
+        ]
+    }
     output_url = 'broad_street_cholera.html'
     header_title = 'broad_street_cholera'
     header_id = 'broad-street-cholera'
@@ -45,7 +54,7 @@ def main():
         header_id=header_id
     )
     deaths = ds.read_file(file_name='snow_cholera_deaths.csv')
-    pumps = ds.read_file(file_name='snow_cholera_pumps.csv')
+    pumps = pd.DataFrame(data=data_pumps)
     file_graph = 'broad_street_cholera_outbreak.svg'
     figsize = (8, 6)
     legend1 = 'Deaths'
