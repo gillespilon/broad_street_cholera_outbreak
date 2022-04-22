@@ -173,49 +173,25 @@ def main():
     legend1 = 'Deaths'
     legend2 = 'Pumps'
     figsize = (8, 6)
+    ds.style_graph()
     original_stdout = ds.html_begin(
-        output_url=output_url,
-        header_title=header_title,
-        header_id=header_id
+        output_url=output_url, header_title=header_title, header_id=header_id
     )
     deaths = pd.DataFrame(data=data_deaths)
     pumps = pd.DataFrame(data=data_pumps)
     fig, ax = ds.plot_scatter_scatter_x1_x2_y1_y2(
-        X1=deaths['x'],
-        X2=pumps['x'],
-        y1=deaths['y'],
-        y2=pumps['y'],
-        figsize=figsize,
-        markersize1=3,
-        labellegendy2=legend2,
-        colour1=colour1,
-        colour2=colour2,
-        markersize2=3,
-        labellegendy1=legend1
+        X1=deaths['x'], X2=pumps['x'], y1=deaths['y'], y2=pumps['y'],
+        figsize=figsize, markersize1=3, labellegendy2=legend2, colour1=colour1,
+        colour2=colour2, markersize2=3, labellegendy1=legend1
     )
-    ax.set_title(
-        label=axis_title + '\n' + axis_subtitle,
-        fontweight='bold'
-    )
-    ax.set_ylabel(
-        ylabel=y_axis_label,
-        fontweight='bold'
-    )
-    ax.set_xlabel(
-        xlabel=x_axis_label,
-        fontweight='bold'
-    )
+    ax.set_title(label=axis_title + '\n' + axis_subtitle)
+    ax.set_ylabel(ylabel=y_axis_label)
+    ax.set_xlabel(xlabel=x_axis_label)
     ax.legend(frameon=False)
-    ds.despine(ax)
-    fig.savefig(
-        fname=file_graph,
-        format='svg'
-    )
+    ds.despine(ax=ax)
+    fig.savefig(fname=file_graph, format='svg')
     ds.html_figure(file_name=file_graph)
-    ds.html_end(
-        original_stdout=original_stdout,
-        output_url=output_url
-    )
+    ds.html_end(original_stdout=original_stdout, output_url=output_url)
 
 
 if __name__ == '__main__':
