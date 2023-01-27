@@ -12,9 +12,7 @@ Pumps. The x-y values are the distances in m from the lower left datum of the ma
 
 ## References
 
-[John Snow site at UCLA](http://www.ph.ucla.edu/epi/snow.html).
-
-[John Snow's cholera data](http://www.math.uah.edu/stat/data/Snow.html)
+[John Snow site at UCLA](https://www.ph.ucla.edu/epi/snow.html).
 
 Johnson, Steven (2007). The Ghost Map: The Story of London’s Most Terrifying Epidemic—and How it Changed Science, Cities, and the Modern World. 1st ed. New York, NY: Riverhead Books. isbn: 978-1-59448-269-4.
 
