@@ -18,7 +18,7 @@ The x-y values are the distances in m from the lower left datum of the map.
 Each pair represents one pump. There are 13 values, representing 13 pumps.
 
 [John Snow site at UCLA](http://www.ph.ucla.edu/epi/snow.html).
-[John Snow's cholera data](http://www.math.uah.edu/stat/data/Snow.html)
+[John Snow"s cholera data](http://www.math.uah.edu/stat/data/Snow.html)
 Johnson, Steven. *Ghost Map*. 2006. Riverhead Books: New York, NY.
 [Wikipedia 1854 Broad Street cholera outbreak]
     (https://en.wikipedia.org/wiki/1854_Broad_Street_cholera_outbreak)
@@ -30,21 +30,18 @@ https://github.com/gillespilon/datasense
 import datasense as ds
 import pandas as pd
 
-colour1 = '#0077bb'
-colour2 = '#ee7733'
-
 
 def main():
-    data_pumps = {
-        'x': [
+    DATA_PUMPS = {
+        "x": [
             8.7, 11, 13.4, 14.9, 8.7, 8.9, 12.6, 10.7, 13.5, 16.4, 18.9, 16, 9
         ],
-        'y': [
+        "y": [
             17.9, 18.5, 17.4, 17.8, 14.9, 12.8, 11.7, 7.4, 8, 9.3, 9.7, 5, 5.1
         ]
     }
-    data_deaths = {
-        'x': [
+    DATA_DEATHS = {
+        "x": [
             13.6, 9.9, 14.7, 15.2, 13.2, 13.8, 13.1, 11, 15.2, 11.1, 11.7,
             12.3, 10.6, 14.6, 16.6, 9.5, 13.3, 15, 15.1, 10.9, 12.5, 11.8,
             12.2, 13.9, 12.3, 11, 11, 13.5, 10.8, 12.2, 13.9, 12.5, 15.7,
@@ -101,7 +98,7 @@ def main():
             11.4, 12.4, 12.7, 13.6, 14.1, 15.1, 15.3, 14.7, 13.4, 12.3,
             14.3, 12.4, 12.1, 12.4, 15.1, 17.3, 12.4, 15
         ],
-        'y': [
+        "y": [
             11.1, 12.6, 10.2, 10, 13, 8.9, 10.6, 11.9, 11.7, 9.6,
             13.6, 11.5, 11.9, 10.6, 14.3, 10.7, 10.7, 10.2, 10, 9.8,
             12, 11.8, 10.4, 12.8, 11.9, 11.9, 9.8, 13.3, 11.7, 13.6,
@@ -162,37 +159,56 @@ def main():
             10.4, 11.6, 10.3, 11.5, 10.2, 11.6, 11.9, 12.5
         ]
     }
-    x_axis_label = 'X distance from lower left datum of map (m)'
-    y_axis_label = 'Y distance from lower left datum of map (m)'
-    axis_title = 'Broad Street Cholera Outbreak of 1854'
-    file_graph = 'broad_street_cholera_outbreak.svg'
-    output_url = 'broad_street_cholera.html'
-    header_title = 'broad_street_cholera'
-    header_id = 'broad-street-cholera'
-    axis_subtitle = 'Soho, London, UK'
-    legend1 = 'Deaths'
-    legend2 = 'Pumps'
-    figsize = (8, 6)
+    X_AXIS_LABEL = "X distance from lower left datum of map (m)"
+    Y_AXIS_LABEL = "Y distance from lower left datum of map (m)"
+    AXIS_TITLE = "Broad Street Cholera Outbreak of 1854"
+    FILE_GRAPH = "broad_street_cholera_outbreak.svg"
+    OUTPUT_URL = "broad_street_cholera.html"
+    header_title = "Broad Street Cholera Outbreak of 1854"
+    header_id = "broad-street-cholera"
+    AXIS_SUBTITLE = "Soho, London, UK"
+    GRAPH_FORMAT = "svg"
+    COLOUR1 = "#0077bb"
+    COLOUR2 = "#ee7733"
+    LEGEND1 = "Deaths"
+    LEGEND2 = "Pumps"
+    FIGSIZE = (8, 6)
     ds.style_graph()
     original_stdout = ds.html_begin(
-        output_url=output_url, header_title=header_title, header_id=header_id
+        output_url=OUTPUT_URL,
+        header_title=header_title,
+        header_id=header_id
     )
-    deaths = pd.DataFrame(data=data_deaths)
-    pumps = pd.DataFrame(data=data_pumps)
+    deaths = pd.DataFrame(data=DATA_DEATHS)
+    pumps = pd.DataFrame(data=DATA_PUMPS)
     fig, ax = ds.plot_scatter_scatter_x1_x2_y1_y2(
-        X1=deaths['x'], X2=pumps['x'], y1=deaths['y'], y2=pumps['y'],
-        figsize=figsize, markersize1=3, labellegendy2=legend2, colour1=colour1,
-        colour2=colour2, markersize2=3, labellegendy1=legend1
+        X1=deaths["x"],
+        X2=pumps["x"],
+        y1=deaths["y"],
+        y2=pumps["y"],
+        figsize=FIGSIZE,
+        markersize1=3,
+        labellegendy2=LEGEND2,
+        colour1=COLOUR1,
+        colour2=COLOUR2,
+        markersize2=6,
+        labellegendy1=LEGEND1
     )
-    ax.set_title(label=axis_title + '\n' + axis_subtitle)
-    ax.set_ylabel(ylabel=y_axis_label)
-    ax.set_xlabel(xlabel=x_axis_label)
+    ax.set_title(label=AXIS_TITLE + "\n" + AXIS_SUBTITLE)
+    ax.set_ylabel(ylabel=Y_AXIS_LABEL)
+    ax.set_xlabel(xlabel=X_AXIS_LABEL)
     ax.legend(frameon=False)
     ds.despine(ax=ax)
-    fig.savefig(fname=file_graph, format='svg')
-    ds.html_figure(file_name=file_graph)
-    ds.html_end(original_stdout=original_stdout, output_url=output_url)
+    fig.savefig(
+        fname=FILE_GRAPH,
+        format=GRAPH_FORMAT
+    )
+    ds.html_figure(file_name=FILE_GRAPH)
+    ds.html_end(
+        original_stdout=original_stdout,
+        output_url=OUTPUT_URL
+    )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
