@@ -4,13 +4,11 @@
 
 There was a severe outbreak of cholera in 1854 in the Soho district of London, England, which killed 616 people over one month. Dr. John Snow and Reverend Henry Whitehead linked the outbreak to contaminated water, identified the index case, and stopped the outbreak by having the Broad Street water pump disabled.
 
-## Data
-
 snow_cholera_deaths. The x-y values are the distances in m from the lower left datum of the map. Each pair represents one death. There are 578 values, slightly less than the 616 actual deaths.
 
 snow_cholera_pumps. The x-y values are the distances in m from the lower left datum of the map. Each pair represents one pump. There are 13 values, representing 13 pumps.
 
-The [datasense](https://github.com/gillespilon/datasense) package is required.
+![broad_street_cholera_outbreak.svg](broad_street_cholera_outbreak.svg)
 
 ## References
 
