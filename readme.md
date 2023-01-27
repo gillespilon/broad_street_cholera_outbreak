@@ -16,6 +16,6 @@ Pumps. The x-y values are the distances in m from the lower left datum of the ma
 
 [John Snow's cholera data](http://www.math.uah.edu/stat/data/Snow.html)
 
-Johnson, Steven. *Ghost Map*. 2006. Riverhead Books: New York, NY.
+Johnson, Steven (2007). The Ghost Map: The Story of London’s Most Terrifying Epidemic—and How it Changed Science, Cities, and the Modern World. 1st ed. New York, NY: Riverhead Books. isbn: 978-1-59448-269-4.
 
 [Wikipedia 1854 Broad Street cholera outbreak](https://en.wikipedia.org/wiki/1854_Broad_Street_cholera_outbreak)
